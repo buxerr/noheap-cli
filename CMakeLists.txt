@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.16)
 project(noheap_cli LANGUAGES CXX)
 
 add_library(tinycli INTERFACE)
-target_include_directories(tinycli INTERFACE include)
+add_library(noheap_cli::tinycli ALIAS tinycli)
+target_include_directories(tinycli INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
 target_compile_features(tinycli INTERFACE cxx_std_11)
 
 add_executable(tinycli-tests tests/test_cli.cpp)

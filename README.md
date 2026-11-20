@@ -18,6 +18,17 @@ ctest --test-dir build --output-on-failure
 
 The library is an interface target with headers in `include/`. The example is in [examples/basic_cli.cpp](examples/basic_cli.cpp). CI builds on Linux and Windows with warnings treated as errors. The test executable overrides global `new` and verifies registration and parsing do not allocate.
 
+## Install in PlatformIO
+
+After the `v0.1.0` GitHub release is available, a PlatformIO project can consume the header-only parser directly from the tagged repository:
+
+```ini
+[env:my-board]
+lib_deps = https://github.com/buxerr/noheap-cli.git#v0.1.0
+```
+
+The package manifest is also ready for the PlatformIO Registry so users can find it by search and install it with a version-pinned registry dependency.
+
 ## Set fixed capacities
 
 Instantiate `tinycli::Cli` with maximum command count, input-line bytes, token count, token bytes, and response bytes. `MaxTokens` includes the command name. Capacities are compile-time constants, so you can size memory to your command set and transport.

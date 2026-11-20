@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/schema/library.json",
+  "name": "noheap-cli",
+  "version": "0.1.0",
+  "description": "Header-only C++11 no-heap command parser for embedded firmware CLIs.",
+  "keywords": ["embedded", "cli", "command-parser", "no-heap", "fixed-buffer", "c++11"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buxerr/noheap-cli.git"
+  },
+  "authors": [
+    {
+      "name": "Niko Filipic",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/buxerr/noheap-cli",
+  "frameworks": "*",
+  "platforms": "*",
+  "headers": ["tinycli/tinycli.hpp"],
+  "examples": "examples",
+  "export": {
+    "include": ["include/**", "examples/**", "README.md", "LICENSE", "library.json"]
+  }
+}
